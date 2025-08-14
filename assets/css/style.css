@@ -151,7 +151,7 @@ address {
 img {
   border: 0;
   max-width: 100%;
-  height: auto;
+  height: 60px;
 }
 
 a {
@@ -1289,6 +1289,7 @@ kbd {
   gap: 15px;
   bottom: 0;
   z-index: 11111;
+  
 }
 .strategic-slider .strategic-swiper-controller .strategic-slider-pagination {
   font-weight: 700;
@@ -2474,7 +2475,7 @@ kbd {
 /* Responsive Design */
 @media screen and (max-width: 1399px) {
   .ak-footer.style-1 .footer-content .footer-nav .footer-link {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
 }
@@ -2725,7 +2726,7 @@ kbd {
   padding: 5px 5px;
 }
 .common-btn.style-2.color-3 {
-  background-color: #9fe970;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .common-btn.style-2.color-3::before {
   background-color: var(--black-color);
@@ -2839,10 +2840,11 @@ kbd {
   transform: translateX(3px);
 }
 .slider-btn.color-2:hover {
-  background-color: #9fe970;
+  background-color: #030917
+  ;
 }
 .slider-btn.color-2:hover svg path {
-  stroke: #030917;
+  stroke: #ebebeb;
 }
 .slider-btn.style-2 {
   width: 80px;
@@ -3281,7 +3283,7 @@ kbd {
   align-items: center;
   pointer-events: visible;
   width: 550px;
-  height: 140px;
+  height: 40px;
   background-color: rgba(6, 50, 50, 0.5);
 }
 .ak-slider-hero-2 .social-medial.hero-2 .content li {
