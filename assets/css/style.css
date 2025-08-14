@@ -2278,7 +2278,7 @@ kbd {
   }
 }
 /*--------------------------------------------------------------
-  9. Footer
+/* 9. Footer
 ----------------------------------------------------------------*/
 .footer-bg {
   background-color: #030917;
@@ -2298,11 +2298,12 @@ kbd {
 .ak-footer.style-1 .footer-content {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 110px;
+  align-items: flex-start;
+  gap: 80px;
 }
 .ak-footer.style-1 .footer-content .company-info {
-  max-width: 336px;
+  max-width: 380px;
+  flex: 0 0 auto;
 }
 .ak-footer.style-1 .footer-content .company-info .ak-site_branding {
   display: inline-block;
@@ -2311,6 +2312,7 @@ kbd {
 .ak-footer.style-1 .footer-content .company-info .text {
   color: #e7e7e7;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 .ak-footer.style-1 .footer-content .company-info .social-icon {
   display: flex;
@@ -2318,16 +2320,17 @@ kbd {
 }
 .ak-footer.style-1 .footer-content .footer-nav {
   width: 100%;
+  flex: 1;
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .new-letter {
-  max-width: 380px;
+  max-width: 420px;
   width: 100%;
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .new-letter .title {
@@ -2343,7 +2346,7 @@ kbd {
   margin: 0;
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .email-content {
-  max-width: 372px;
+  max-width: 380px;
   width: 100%;
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .email-content .email-input-btn {
@@ -2358,6 +2361,9 @@ kbd {
   width: 100%;
   color: #fff;
   transition: border-bottom 0.3s;
+}
+.ak-footer.style-1 .footer-content .footer-nav .new-letter-email .email-content .email-input-btn .email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .email-content .email-input-btn .email:focus {
   outline: none;
@@ -2377,33 +2383,38 @@ kbd {
   margin-top: 15px;
 }
 .ak-footer.style-1 .footer-content .footer-nav .footer-link {
-  display: flex;
-  max-width: 802px;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: none;
 }
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .short-title {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 135%;
   color: #fff;
   margin-bottom: 18px;
+  font-weight: 600;
 }
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   list-style: none;
   padding-left: 0;
 }
+.ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all li {
+  margin-bottom: 5px;
+}
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a {
   margin-left: 15px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 165%;
   color: #e7e7e7;
   position: relative;
   display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a::after {
   content: "";
@@ -2417,12 +2428,30 @@ kbd {
   transition: all 0.3s;
   background-color: #fff;
 }
+.ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a:hover {
+  color: #fff;
+}
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a:hover::after {
   width: 100%;
 }
 .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a span {
   color: #fff;
+  font-weight: 500;
 }
+.ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all strong {
+  color: #f9d67c;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 3px;
+}
+.ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all small {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-left: 15px;
+  display: block;
+}
+
 .ak-footer.style-1 .copy-right {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 25px 0px;
@@ -2433,6 +2462,22 @@ kbd {
   color: #fff;
   margin-bottom: 0;
 }
+.ak-footer.style-1 .copy-right .copyright-text a {
+  color: #f9d67c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.ak-footer.style-1 .copy-right .copyright-text a:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1399px) {
+  .ak-footer.style-1 .footer-content .footer-nav .footer-link {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
 
 @media screen and (max-width: 1199px) {
   .ak-footer.style-1 .footer-content {
@@ -2440,11 +2485,62 @@ kbd {
     align-items: flex-start;
     gap: 50px;
   }
+  .ak-footer.style-1 .footer-content .company-info {
+    max-width: 100%;
+  }
   .ak-footer.style-1 .footer-content .footer-nav {
     width: 100%;
   }
   .ak-footer.style-1 .footer-content .footer-nav .new-letter-email {
     margin-bottom: 50px;
+  }
+  .ak-footer.style-1 .footer-content .footer-nav .footer-link {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .ak-footer.style-1 .footer-content .footer-nav .new-letter-email {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .new-letter,
+  .ak-footer.style-1 .footer-content .footer-nav .new-letter-email .email-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ak-footer.style-1 .footer-content .footer-nav .footer-link {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .short-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .ak-footer.style-1 .footer-content .footer-nav .footer-link .link-content .linek-all a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .ak-footer.style-1 .footer-content {
+    gap: 40px;
+  }
+  .ak-footer.style-1 .footer-content .company-info .social-icon {
+    gap: 15px;
+  }
+  .ak-footer.style-1 .footer-content .footer-nav .new-letter-email {
+    margin-bottom: 40px;
+  }
+  .ak-footer.style-1 .copy-right {
+    padding: 20px 0;
+  }
+  .ak-footer.style-1 .copy-right .copyright-text {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
 /*--------------------------------------------------------------
